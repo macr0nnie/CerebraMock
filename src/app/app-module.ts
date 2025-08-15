@@ -7,7 +7,8 @@ import { Sidebar } from './layouts/sidebar/sidebar';
 import { Client } from './module/client/client';
 import { Communication } from './module/communication/communication';
 import { Person } from './module/person/person';
-import { Table } from './common/table/table';
+import { TableModule } from 'primeng/table';
+
 
 @NgModule({
   declarations: [
@@ -16,15 +17,20 @@ import { Table } from './common/table/table';
     Client,
     Communication,
     Person,
-    Table
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TableModule
+
+
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
+    
   ],
   bootstrap: [App]
 })
 export class AppModule { }
+
+

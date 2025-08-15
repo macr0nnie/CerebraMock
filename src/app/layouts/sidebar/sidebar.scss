@@ -1,0 +1,72 @@
+:host {
+    display: block;
+    height: 100vh;
+}
+
+.sidebar-custom {
+    background-color: var(--surface-a);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    .sidebar-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 1rem;
+        
+        .logo-container {
+            padding: 1rem 0;
+        }
+        
+        .nav-menu {
+            li {
+                margin-bottom: 0.5rem;
+                border-radius: var(--border-radius);
+                transition: background-color 0.2s;
+                
+                a {
+                    color: var(--text-color);
+                    text-decoration: none;
+                    text-align: center;
+                    
+                    span {
+                        font-size: 0.75rem;
+                    }
+                }
+                
+                &:hover {
+                    background-color: var(--surface-c);
+                }
+                
+                &.active {
+                    background-color: var(--primary-color);
+                    
+                    a {
+                        color: white;
+                    }
+                }
+            }
+        }
+        
+        .sidebar-footer {
+            padding: 1rem 0;
+        }
+    }
+}
+
+.sidebar-toggle {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1000;
+}
+
+// For mobile responsiveness
+@media (max-width: 768px) {
+    .sidebar-custom {
+        width: 60px !important;
+        
+        .nav-menu li a span {
+            display: none;
+        }
+    }
+}
